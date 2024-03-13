@@ -1,0 +1,25 @@
+.assessment-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px; /* Add some margin for spacing */
+}
+
+
+.score-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px; /* Add some margin for spacing */
+}
+/* Small modal */
+.modal-sm {
+    max-width: 300px;
+}
+
+/* Medium modal */
+.modal-md {
+    max-width: 600px;
+}
+.my-app-modal-lg {
+    max-width: 900px;
+}
+
