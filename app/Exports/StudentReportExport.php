@@ -599,7 +599,7 @@ if ($hasFinalsAssessments) {
             $worksheet = $event->sheet->getDelegate();
           
             
-            $rowNumbers = [5,6,7,8]; 
+            $rowNumbers = [5, 6, 7, 8]; 
 
             
             $exemptColumns = ['A', 'B', 'C']; 
@@ -615,7 +615,39 @@ if ($hasFinalsAssessments) {
                         $worksheet->getColumnDimension($column)->setAutoSize(false);
                     }
                 }
-            }
+            }   
+          
+             
+            $event->sheet->setCellValue('A' . ($lastDataRow + 2), "Legends:");
+            $event->sheet->setCellValue('A' . ($lastDataRow + 3), "A - ABSENT");
+            $event->sheet->setCellValue('A' . ($lastDataRow + 4), "E - EXCUSED");
+
+          
+            $event->sheet->mergeCells('A' . ($lastDataRow + 2) . ':B' . ($lastDataRow + 2));
+            $event->sheet->mergeCells('A' . ($lastDataRow + 3) . ':B' . ($lastDataRow + 3));
+            $event->sheet->mergeCells('A' . ($lastDataRow + 4) . ':B' . ($lastDataRow + 4));
+
+            $borderStyle = [
+                'borders' => [
+                    'outline' => [
+                        'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                        'color' => ['argb' => 'FF000000'],
+                    ],
+                ],
+            ];
+
+            $event->sheet->getStyle('A' . ($lastDataRow + 2) . ':B' . ($lastDataRow + 4))->applyFromArray($borderStyle);
+
+           
+            $event->sheet->getStyle('A' . ($lastDataRow + 2) . ':Z' . ($lastDataRow + 4))->applyFromArray([
+                'font' => [
+                    'bold' => true,
+                ],
+            ]);
+            
+            $event->sheet->getColumnDimension('A')->setWidth(20);
+       
+
             },
         ];
     }

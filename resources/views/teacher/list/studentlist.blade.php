@@ -560,6 +560,21 @@ $(document).ready(function() {
 });
 </script>
 
+<script>
+    $(document).ready(function() {
+        $('.assessment-column input[type="text"]').on('input', function() {
+            var value = $(this).val();
+            var containsLetters = /[a-zA-Z]/.test(value);
+            var containsNumbers = /\d/.test(value);
+            
+            if (containsLetters && containsNumbers) {
+                $(this).val('');    
+                alert('Enter numbers only or letters only.');
+            }
+        });
+    });
+</script>
+
 @endpush
 
 
