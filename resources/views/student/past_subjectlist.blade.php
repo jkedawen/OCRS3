@@ -57,7 +57,7 @@
             </div>
 
               @else
-                <p>currently not enrolled in any subjects.</p>
+                <p>No available past semester subjects.</p>
                  @endif
             </div>
           </div>

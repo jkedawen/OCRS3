@@ -30,7 +30,7 @@ class AuthController extends Controller
             else if(Auth::user()->role == 3)
             {
                 
-              return redirect('student/dashboard');
+               return redirect()->route('student.subjectlist', ['studentId' => Auth::user()->id]);
             }
             else if(Auth::user()->role == 4)
             {
@@ -57,7 +57,7 @@ class AuthController extends Controller
             }
             else if(Auth::user()->role == 3)
             {
-              return redirect('student/dashboard');
+               return redirect()->route('student.subjectlist', ['studentId' => Auth::user()->id]);
             }
              else if(Auth::user()->role == 4)
             {
