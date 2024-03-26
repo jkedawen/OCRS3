@@ -18,7 +18,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-           <a href="{{ url('admin/set_semester/view_semesters')}}" class="btn btn-primary">Modify Semesters</a>
+           <a href="{{ url('secretary/set_semester/view_semesters')}}" class="btn btn-primary">Modify Semesters</a>
           </div>
           
         </div>
@@ -33,7 +33,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
    @include('messages')
-    <form method="post" action="{{ route('semesters.setupCurrent') }}">
+    <form method="post" action="{{ route('semesters.setupCurrent1') }}">
         @csrf
 
          <div class="card-body">

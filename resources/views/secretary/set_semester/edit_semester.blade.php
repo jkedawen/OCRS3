@@ -12,7 +12,7 @@
 <div class="container">
     <h1>Edit Semester</h1>
 
-    <form method="post" action="{{ route('semesters.update', $semester->id) }}">
+    <form method="post" action="{{ route('semesters.update1', $semester->id) }}">
         @csrf
         @method('PUT')
         <div class="form-group">

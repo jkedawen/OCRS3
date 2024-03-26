@@ -10,7 +10,7 @@
     <div class="container">
     <h1>Create Semester</h1>
 
-    <form method="post" action="{{ route('semesters.store') }}">
+    <form method="post" action="{{ route('semesters.store1') }}">
         @csrf
         <div class="form-group">
             <label for="name">Semester</label>

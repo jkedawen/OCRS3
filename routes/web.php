@@ -79,14 +79,14 @@ Route::group(['middleware' => 'admin'], function () {
     
 
     Route::get('admin/set_semester/view_semesters', [SemesterController::class, 'viewSemester'])->name('semesters.view_semesters');  
-    Route::get('/semesters/create', [SemesterController::class, 'create'])->name('semesters.create');
+    Route::get('admin/semesters/create', [SemesterController::class, 'create'])->name('semesters.create');
     Route::post('admin/set_semester/view_semesters', [SemesterController::class, 'store'])->name('semesters.store');
-    Route::get('/semesters/{id}/edit', [SemesterController::class, 'edit'])->name('semesters.edit');
-    Route::put('/semesters/{id}', [SemesterController::class, 'update'])->name('semesters.update');
-    Route::delete('/semesters/{id}', [SemesterController::class, 'destroy'])->name('semesters.destroy');
+    Route::get('admin/semesters/{id}/edit', [SemesterController::class, 'edit'])->name('semesters.edit');
+    Route::put('admin/semesters/{id}', [SemesterController::class, 'update'])->name('semesters.update');
+    Route::delete('admin/semesters/{id}', [SemesterController::class, 'destroy'])->name('semesters.destroy');
 
     Route::get('admin/set_semester/set_current', [SemesterController::class, 'setupCurrentSemesterView'])->name('semesters.setupCurrentView');
-    Route::post('/set-current-semester', [SemesterController::class, 'setupCurrentSemester'])->name('semesters.setupCurrent');
+    Route::post('admin/set-current-semester', [SemesterController::class, 'setupCurrentSemester'])->name('semesters.setupCurrent');
        
     Route::get('/admin/student_list/view_students', [AdminController::class, 'viewAllStudents'])->name('admin.viewAllStudents');
     Route::get('/admin/student_list/view-enrolled-subjects/{studentId}', [AdminController::class, 'viewEnrolledSubjects'])->name('admin.viewEnrolledSubjects');
@@ -223,14 +223,14 @@ Route::group(['middleware' => 'secretary'], function () {
 
 
     Route::get('secretary/set_semester/view_semesters', [SemesterController::class, 'viewSemester1'])->name('semesters.view_semesters');  
-    Route::get('/semesters/create', [SemesterController::class, 'create1'])->name('semesters.create');
-    Route::post('secretary/set_semester/view_semesters', [SemesterController::class, 'store1'])->name('semesters.store');
-    Route::get('/semesters/{id}/edit', [SemesterController::class, 'edit1'])->name('semesters.edit');
-    Route::put('/semesters/{id}', [SemesterController::class, 'update1'])->name('semesters.update');
-    Route::delete('/semesters/{id}', [SemesterController::class, 'destroy1'])->name('semesters.destroy');
+    Route::get('/semesters/create', [SemesterController::class, 'create1'])->name('semesters.create1');
+    Route::post('secretary/set_semester/view_semesters', [SemesterController::class, 'store1'])->name('semesters.store1');
+    Route::get('/semesters/{id}/edit', [SemesterController::class, 'edit1'])->name('semesters.edit1');
+    Route::put('/semesters/{id}', [SemesterController::class, 'update1'])->name('semesters.update1');
+    Route::delete('/semesters/{id}', [SemesterController::class, 'destroy1'])->name('semesters.destroy1');
 
     Route::get('secretary/set_semester/set_current', [SemesterController::class, 'setupCurrentSemesterView1'])->name('semesters.setupCurrentView');
-    Route::post('/set-current-semester', [SemesterController::class, 'setupCurrentSemester1'])->name('semesters.setupCurrent');
+    Route::post('/set-current-semester', [SemesterController::class, 'setupCurrentSemester1'])->name('semesters.setupCurrent1');
     });
 
 
