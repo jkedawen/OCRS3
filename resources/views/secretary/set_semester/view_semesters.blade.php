@@ -11,7 +11,7 @@
     <h1>Semesters</h1>
       @include('messages')
         <div class="col-sm-6" style="text-align: right;">
-    <a href="{{ route('semesters.create') }}" class="btn btn-primary">Add Semester</a>
+    <a href="{{ route('semesters.create1') }}" class="btn btn-primary">Add Semester</a>
 </div>
     <table class="table mt-3">
         <thead>
@@ -29,8 +29,8 @@
                     <td>{{ $semester->semester_name }}</td>
                     <td>{{ $semester->school_year }}</td>
                     <td>
-                        <a href="{{ route('semesters.edit', $semester->id) }}" class="btn btn-primary">Edit</a>
-                        <form action="{{ route('semesters.destroy', $semester->id) }}" method="POST" style="display: inline;">
+                        <a href="{{ route('semesters.edit1', $semester->id) }}" class="btn btn-primary">Edit</a>
+                        <form action="{{ route('semesters.destroy1', $semester->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
